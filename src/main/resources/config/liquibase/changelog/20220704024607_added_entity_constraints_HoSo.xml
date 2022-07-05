@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity HoSo.
+    -->
+    <changeSet id="20220704024607-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="quan_ly_su_coykhoa_id"
+                                 baseTableName="ho_so"
+                                 constraintName="fk_ho_so__quan_ly_su_coykhoa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="quan_ly_su_co_y_khoa"/>
+
+        <addForeignKeyConstraint baseColumnNames="phu_luc_id"
+                                 baseTableName="ho_so"
+                                 constraintName="fk_ho_so__phu_luc_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="phu_luc"/>
+    </changeSet>
+</databaseChangeLog>

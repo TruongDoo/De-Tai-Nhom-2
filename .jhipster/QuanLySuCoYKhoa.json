@@ -1,0 +1,70 @@
+{
+  "applications": "*",
+  "changelogDate": "20220704024606",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "quan_ly_su_co_y_khoa",
+  "fields": [
+    {
+      "fieldName": "maSoSuCo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ngayBaoCao",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "donViBaoCao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "soThuTu",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tenSuCo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nhomSuCo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mucDoSuCo",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "QuanLySuCoYKhoa",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "thongTinSuCo",
+      "otherEntityRelationshipName": "quanLySuCoYKhoa",
+      "relationshipName": "thongTinSuCo",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "thongTinNguoiBenh",
+      "otherEntityRelationshipName": "quanLySuCoYKhoa",
+      "relationshipName": "thongTinNguoiBenh",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "nhanVien",
+      "otherEntityRelationshipName": "quanLySuCoYKhoa",
+      "relationshipName": "quanLySuCoYKhoa",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "hoSo",
+      "otherEntityRelationshipName": "quanLySuCoYKhoa",
+      "relationshipName": "hoSo",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

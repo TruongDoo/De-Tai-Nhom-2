@@ -1,0 +1,27 @@
+{
+  "codejhipsterApp": {
+    "thongTinNguoiBenh": {
+      "home": {
+        "title": "Patient information",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Patient information",
+        "createOrEditLabel": "Create or edit a Patient information",
+        "notFound": "No Patient information found"
+      },
+      "created": "A new Patient information is created with identifier {{ param }}",
+      "updated": "A Patient information is updated with identifier {{ param }}",
+      "deleted": "A Patient information is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Patient information {{ id }}?"
+      },
+      "detail": {
+        "title": "Patient information"
+      },
+      "id": "ID",
+      "hoVaTen": "FullName",
+      "soBenhAn": "Number of medical records",
+      "gioiTinh": "Sex",
+      "quanLySuCoYKhoa": "Medical Incident Management"
+    }
+  }
+}

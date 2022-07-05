@@ -1,0 +1,32 @@
+{
+  "codejhipsterApp": {
+    "hoSo": {
+      "home": {
+        "title": "Hồ Sơ",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Hồ Sơ",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Hồ Sơ",
+        "notFound": "Không tìm thấy Hồ Sơ"
+      },
+      "created": "Một Hồ Sơ mới được tạo với định danh {{ param }}",
+      "updated": "Một Hồ Sơ cập nhật với định danh {{ param }}",
+      "deleted": "Một Hồ Sơ đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Hồ Sơ {{ id }}?"
+      },
+      "detail": {
+        "title": "Hồ Sơ"
+      },
+      "id": "ID",
+      "soThuTu": "Số Thứ Tự",
+      "tenHoSo": "Tên Hồ Sơ",
+      "noiLuu": "Nơi Lưu",
+      "thoiGianLuu": "Thời Gian Lưu",
+      "quanLySuCoYKhoa": "Quản Lý Sự Cố Y Khoa",
+      "phuLuc": "Phụ Lục",
+      "help": {
+        "soThuTu": "Thuộc tính tên."
+      }
+    }
+  }
+}

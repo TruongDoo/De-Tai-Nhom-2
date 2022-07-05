@@ -1,0 +1,27 @@
+{
+  "codejhipsterApp": {
+    "phuLuc": {
+      "home": {
+        "title": "Addendum",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Addendum",
+        "createOrEditLabel": "Create or edit a Addendum",
+        "notFound": "No Addendum found"
+      },
+      "created": "A new Addendum is created with identifier {{ param }}",
+      "updated": "A Addendum is updated with identifier {{ param }}",
+      "deleted": "A Addendum is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Addendum {{ id }}?"
+      },
+      "detail": {
+        "title": "Addendum"
+      },
+      "id": "ID",
+      "soThuTu": "Numerical Order",
+      "tenBieuMau": "Form Name",
+      "maHieu": "Code",
+      "hoSo": "File"
+    }
+  }
+}

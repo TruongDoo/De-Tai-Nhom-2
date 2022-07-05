@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20220704024605",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "thong_tin_nguoi_benh",
+  "fields": [
+    {
+      "fieldName": "hoVaTen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "soBenhAn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gioiTinh",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "not an ignored comment",
+  "jpaMetamodelFiltering": false,
+  "name": "ThongTinNguoiBenh",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "quanLySuCoYKhoa",
+      "otherEntityRelationshipName": "thongTinNguoiBenh",
+      "relationshipName": "quanLySuCoYKhoa",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

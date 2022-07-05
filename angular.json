@@ -69,7 +69,8 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
-            }
+            },
+            "instrumenter": {}
           },
           "defaultConfiguration": "production"
         },
@@ -100,6 +101,7 @@
   },
   "defaultProject": "codejhipster",
   "cli": {
+    "analytics": false,
     "cache": {
       "enabled": true,
       "path": "./target/angular/",

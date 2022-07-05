@@ -1,0 +1,43 @@
+{
+  "applications": "*",
+  "changelogDate": "20220704024603",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "nhan_vien",
+  "fields": [
+    {
+      "fieldName": "chucVu",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hoTen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "diaChi",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "soDienThoai",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "NhanVien",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "quanLySuCoYKhoa",
+      "otherEntityRelationshipName": "quanLySuCoYKhoa",
+      "relationshipName": "quanLySuCoYKhoa",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

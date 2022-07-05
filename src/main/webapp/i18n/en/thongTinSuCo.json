@@ -1,0 +1,27 @@
+{
+  "codejhipsterApp": {
+    "thongTinSuCo": {
+      "home": {
+        "title": "Incident information",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Incident information",
+        "createOrEditLabel": "Create or edit a Incident information",
+        "notFound": "No Incident information found"
+      },
+      "created": "A new Incident information is created with identifier {{ param }}",
+      "updated": "A Incident information is updated with identifier {{ param }}",
+      "deleted": "A Incident information is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Incident information {{ id }}?"
+      },
+      "detail": {
+        "title": "Incident information"
+      },
+      "id": "ID",
+      "viTriXayRaSuCo": "The location of the incident",
+      "ngayXayRaSuCo": "The date of the incident",
+      "thoiGian": "Time",
+      "quanLySuCoYKhoa": "Medical Incident Management"
+    }
+  }
+}

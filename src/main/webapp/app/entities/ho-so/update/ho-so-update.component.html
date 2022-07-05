@@ -1,0 +1,108 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-ho-so-heading" data-cy="HoSoCreateUpdateHeading" jhiTranslate="codejhipsterApp.hoSo.home.createOrEditLabel">
+        Create or edit a Ho So
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="codejhipsterApp.hoSo.soThuTu"
+            for="field_soThuTu"
+            [ngbTooltip]="'codejhipsterApp.hoSo.help.soThuTu' | translate"
+            >So Thu Tu</label
+          >
+          <input type="text" class="form-control" name="soThuTu" id="field_soThuTu" data-cy="soThuTu" formControlName="soThuTu" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="codejhipsterApp.hoSo.tenHoSo" for="field_tenHoSo">Ten Ho So</label>
+          <input type="text" class="form-control" name="tenHoSo" id="field_tenHoSo" data-cy="tenHoSo" formControlName="tenHoSo" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="codejhipsterApp.hoSo.noiLuu" for="field_noiLuu">Noi Luu</label>
+          <input type="text" class="form-control" name="noiLuu" id="field_noiLuu" data-cy="noiLuu" formControlName="noiLuu" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="codejhipsterApp.hoSo.thoiGianLuu" for="field_thoiGianLuu">Thoi Gian Luu</label>
+          <div class="d-flex">
+            <input
+              id="field_thoiGianLuu"
+              data-cy="thoiGianLuu"
+              type="datetime-local"
+              class="form-control"
+              name="thoiGianLuu"
+              formControlName="thoiGianLuu"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="codejhipsterApp.hoSo.quanLySuCoYKhoa" for="field_quanLySuCoYKhoa"
+            >Quan Ly Su Co Y Khoa</label
+          >
+          <select
+            class="form-control"
+            id="field_quanLySuCoYKhoa"
+            data-cy="quanLySuCoYKhoa"
+            name="quanLySuCoYKhoa"
+            formControlName="quanLySuCoYKhoa"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                quanLySuCoYKhoaOption.id === editForm.get('quanLySuCoYKhoa')!.value?.id
+                  ? editForm.get('quanLySuCoYKhoa')!.value
+                  : quanLySuCoYKhoaOption
+              "
+              *ngFor="let quanLySuCoYKhoaOption of quanLySuCoYKhoasSharedCollection; trackBy: trackQuanLySuCoYKhoaById"
+            >
+              {{ quanLySuCoYKhoaOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="codejhipsterApp.hoSo.phuLuc" for="field_phuLuc">Phu Luc</label>
+          <select class="form-control" id="field_phuLuc" data-cy="phuLuc" name="phuLuc" formControlName="phuLuc">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="phuLucOption.id === editForm.get('phuLuc')!.value?.id ? editForm.get('phuLuc')!.value : phuLucOption"
+              *ngFor="let phuLucOption of phuLucsSharedCollection; trackBy: trackPhuLucById"
+            >
+              {{ phuLucOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

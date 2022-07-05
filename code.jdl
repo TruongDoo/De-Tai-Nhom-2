@@ -1,0 +1,104 @@
+
+entity NhanVien {
+	chucVu String,
+    hoTen String,
+    email String,
+    diaChi String,
+    soDienThoai String
+}
+
+entity ThongTinSuCo {
+    viTriXayRaSuCo String,
+    ngayXayRaSuCo Instant,
+    thoiGian Instant
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity ThongTinNguoiBenh {
+	hoVaTen String,
+	soBenhAn String,
+	gioiTinh Boolean
+    
+}
+
+entity QuanLySuCoYKhoa {
+	maSoSuCo String required,
+    ngayBaoCao Instant,
+    donViBaoCao String,
+    soThuTu String,
+	tenSuCo String,
+    nhomSuCo String,
+    mucDoSuCo String
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+/**
+ * The Employee entity.
+ */
+entity HoSo {
+	/**
+	* The firstname attribute.
+	*/
+	soThuTu String,
+	tenHoSo String,
+	noiLuu String,
+	thoiGianLuu Instant,
+}
+
+entity PhuLuc {
+	maHieu String required,
+	soThuTu String,
+	tenBieuMau String,
+}
+
+relationship OneToMany {
+	NhanVien to QuanLySuCoYKhoa{quanLySuCoYKhoa},
+	/**
+	* A relationship
+	*/
+	PhuLuc to HoSo{phuLuc}
+	/**
+	* Another side of the same relationship
+	*/
+    
+    
+}
+
+
+relationship ManyToOne {
+	QuanLySuCoYKhoa to ThongTinSuCo{quanLySuCoYKhoa}
+}
+
+relationship ManyToOne {
+	QuanLySuCoYKhoa to ThongTinNguoiBenh{quanLySuCoYKhoa}
+}
+
+relationship ManyToOne {
+	HoSo to QuanLySuCoYKhoa{hoSo}
+}
+
+
+paginate * with pagination
+dto * with mapstruct
+service all with serviceImpl
+// defining multiple OneToMany relationships with comments
+
+
+// defining multiple oneToOne relationships
+
+
+// Set pagination options
+
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

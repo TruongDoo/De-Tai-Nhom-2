@@ -1,0 +1,32 @@
+{
+  "codejhipsterApp": {
+    "hoSo": {
+      "home": {
+        "title": "File",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new File",
+        "createOrEditLabel": "Create or edit a File",
+        "notFound": "No File found"
+      },
+      "created": "A new File is created with identifier {{ param }}",
+      "updated": "A File is updated with identifier {{ param }}",
+      "deleted": "A File is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete File {{ id }}?"
+      },
+      "detail": {
+        "title": "File"
+      },
+      "id": "ID",
+      "soThuTu": "Numerical Order",
+      "tenHoSo": "FileName",
+      "noiLuu": "Place Save",
+      "thoiGianLuu": "Time Saved",
+      "quanLySuCoYKhoa": "Medical Incident Management",
+      "phuLuc": "Appendix",
+      "help": {
+        "soThuTu": "The firstname attribute."
+      }
+    }
+  }
+}

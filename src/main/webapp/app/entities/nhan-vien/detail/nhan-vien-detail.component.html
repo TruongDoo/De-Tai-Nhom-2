@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="nhanVien">
+      <h2 data-cy="nhanVienDetailsHeading"><span jhiTranslate="codejhipsterApp.nhanVien.detail.title">Nhan Vien</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ nhanVien.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.nhanVien.chucVu">Chuc Vu</span></dt>
+        <dd>
+          <span>{{ nhanVien.chucVu }}</span>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.nhanVien.hoTen">Ho Ten</span></dt>
+        <dd>
+          <span>{{ nhanVien.hoTen }}</span>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.nhanVien.email">Email</span></dt>
+        <dd>
+          <span>{{ nhanVien.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.nhanVien.diaChi">Dia Chi</span></dt>
+        <dd>
+          <span>{{ nhanVien.diaChi }}</span>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.nhanVien.soDienThoai">So Dien Thoai</span></dt>
+        <dd>
+          <span>{{ nhanVien.soDienThoai }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/nhan-vien', nhanVien.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

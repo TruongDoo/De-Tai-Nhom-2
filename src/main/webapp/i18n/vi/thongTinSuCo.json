@@ -1,0 +1,27 @@
+{
+  "codejhipsterApp": {
+    "thongTinSuCo": {
+      "home": {
+        "title": "Thông Tin Sự Cố",
+        "refreshListLabel": "Làm Mới",
+        "createLabel": "Thêm mới một Thông Tin Sự Cố",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Thông Tin Sự Cố",
+        "notFound": "Không tìm thấy Thông Tin Sự Cố"
+      },
+      "created": "Một Thông Tin Sự Cố mới được tạo với định danh {{ param }}",
+      "updated": "Một Thông Tin Sự Cố cập nhật với định danh {{ param }}",
+      "deleted": "Một Thông Tin Sự Cố đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Thông Tin Sự Cố {{ id }}?"
+      },
+      "detail": {
+        "title": "Thông Tin Sự Cố"
+      },
+      "id": "ID",
+      "viTriXayRaSuCo": "Vị trí Xảy Ra Sự Cố",
+      "ngayXayRaSuCo": "Ngày Xảy Ra Sự Cố",
+      "thoiGian": "Thời Gian",
+      "quanLySuCoYKhoa": "Quản Lý Sự Cố Y Khoa"
+    }
+  }
+}

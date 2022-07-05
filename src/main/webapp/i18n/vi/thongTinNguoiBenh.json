@@ -1,0 +1,27 @@
+{
+  "codejhipsterApp": {
+    "thongTinNguoiBenh": {
+      "home": {
+        "title": "Thông Tin Người Bệnh",
+        "refreshListLabel": "Làm Mới",
+        "createLabel": "Thêm mới một Thông Tin Người Bệnh",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Thông Tin Người Bệnh",
+        "notFound": "Không tìm thấy Thông Tin Người Bệnh"
+      },
+      "created": "Một Thông Tin Người Bệnh mới được tạo với định danh {{ param }}",
+      "updated": "Một Thông Tin Người Bệnh cập nhật với định danh {{ param }}",
+      "deleted": "Một Thông Tin Người Bệnh đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Thông Tin Người Bệnh {{ id }}?"
+      },
+      "detail": {
+        "title": "Thông Tin Người Bệnh"
+      },
+      "id": "ID",
+      "hoVaTen": "Họ Và Tên",
+      "soBenhAn": "Số Bệnh Án",
+      "gioiTinh": "Giới Tính",
+      "quanLySuCoYKhoa": "Quản Lý Sự Cố Y Khoa"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity QuanLySuCoYKhoa.
+    -->
+    <changeSet id="20220704024606-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="thong_tin_su_co_id"
+                                 baseTableName="quan_ly_su_co_y_khoa"
+                                 constraintName="fk_quan_ly_su_co_y_khoa__thong_tin_su_co_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="thong_tin_su_co"/>
+
+        <addForeignKeyConstraint baseColumnNames="thong_tin_nguoi_benh_id"
+                                 baseTableName="quan_ly_su_co_y_khoa"
+                                 constraintName="fk_quan_ly_su_co_y_khoa__thong_tin_nguoi_benh_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="thong_tin_nguoi_benh"/>
+
+        <addForeignKeyConstraint baseColumnNames="quan_ly_su_coykhoa_id"
+                                 baseTableName="quan_ly_su_co_y_khoa"
+                                 constraintName="fk_quan_ly_su_co_y_khoa__quan_ly_su_coykhoa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="nhan_vien"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,34 @@
+{
+  "codejhipsterApp": {
+    "quanLySuCoYKhoa": {
+      "home": {
+        "title": "Medical Incident Management",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Medical Incident Management",
+        "createOrEditLabel": "Create or edit a Medical Incident Management",
+        "notFound": "No Medical Incident Management found"
+      },
+      "created": "A new Medical Incident Management is created with identifier {{ param }}",
+      "updated": "A Medical Incident Management is updated with identifier {{ param }}",
+      "deleted": "A Medical Incident Management is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Medical Incident Management {{ id }}?"
+      },
+      "detail": {
+        "title": "Medical Incident Management"
+      },
+      "id": "ID",
+      "maSoSuCo": "Trouble Code",
+      "ngayBaoCao": "Day Report",
+      "donViBaoCao": "Unit Report",
+      "soThuTu": "Numerical Order",
+      "tenSuCo": "Incident Name",
+      "nhomSuCo": "Incident Group",
+      "mucDoSuCo": "Incident Level",
+      "thongTinSuCo": "Incident information",
+      "thongTinNguoiBenh": "Patient information",
+      "quanLySuCoYKhoa": "Medical Incident Management",
+      "hoSo": "File"
+    }
+  }
+}

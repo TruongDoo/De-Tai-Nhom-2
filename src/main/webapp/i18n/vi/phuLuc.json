@@ -1,0 +1,27 @@
+{
+  "codejhipsterApp": {
+    "phuLuc": {
+      "home": {
+        "title": "Phu Lucs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Phu Luc",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Phu Luc",
+        "notFound": "No Phu Lucs found"
+      },
+      "created": "Một Phu Luc mới được tạo với định danh {{ param }}",
+      "updated": "Một Phu Luc cập nhật với định danh {{ param }}",
+      "deleted": "Một Phu Luc đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Phu Luc {{ id }}?"
+      },
+      "detail": {
+        "title": "Phu Luc"
+      },
+      "id": "ID",
+      "soThuTu": "So Thu Tu",
+      "tenBieuMau": "Ten Bieu Mau",
+      "maHieu": "Ma Hieu",
+      "hoSo": "Ho So"
+    }
+  }
+}

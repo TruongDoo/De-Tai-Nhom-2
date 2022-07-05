@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="hoSo">
+      <h2 data-cy="hoSoDetailsHeading"><span jhiTranslate="codejhipsterApp.hoSo.detail.title">Ho So</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ hoSo.id }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="codejhipsterApp.hoSo.soThuTu" [ngbTooltip]="'codejhipsterApp.hoSo.help.soThuTu' | translate">So Thu Tu</span>
+        </dt>
+        <dd>
+          <span>{{ hoSo.soThuTu }}</span>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.hoSo.tenHoSo">Ten Ho So</span></dt>
+        <dd>
+          <span>{{ hoSo.tenHoSo }}</span>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.hoSo.noiLuu">Noi Luu</span></dt>
+        <dd>
+          <span>{{ hoSo.noiLuu }}</span>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.hoSo.thoiGianLuu">Thoi Gian Luu</span></dt>
+        <dd>
+          <span>{{ hoSo.thoiGianLuu | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.hoSo.quanLySuCoYKhoa">Quan Ly Su Co Y Khoa</span></dt>
+        <dd>
+          <div *ngIf="hoSo.quanLySuCoYKhoa">
+            <a [routerLink]="['/quan-ly-su-co-y-khoa', hoSo.quanLySuCoYKhoa?.id, 'view']">{{ hoSo.quanLySuCoYKhoa?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.hoSo.phuLuc">Phu Luc</span></dt>
+        <dd>
+          <div *ngIf="hoSo.phuLuc">
+            <a [routerLink]="['/phu-luc', hoSo.phuLuc?.id, 'view']">{{ hoSo.phuLuc?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/ho-so', hoSo.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

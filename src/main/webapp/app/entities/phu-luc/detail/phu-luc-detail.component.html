@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="phuLuc">
+      <h2 data-cy="phuLucDetailsHeading"><span jhiTranslate="codejhipsterApp.phuLuc.detail.title">Phu Luc</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ phuLuc.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.phuLuc.soThuTu">So Thu Tu</span></dt>
+        <dd>
+          <span>{{ phuLuc.soThuTu }}</span>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.phuLuc.tenBieuMau">Ten Bieu Mau</span></dt>
+        <dd>
+          <span>{{ phuLuc.tenBieuMau }}</span>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.phuLuc.maHieu">Ma Hieu</span></dt>
+        <dd>
+          <span>{{ phuLuc.maHieu }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/phu-luc', phuLuc.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

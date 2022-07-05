@@ -1,0 +1,166 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-quan-ly-su-co-y-khoa-heading"
+        data-cy="QuanLySuCoYKhoaCreateUpdateHeading"
+        jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.home.createOrEditLabel"
+      >
+        Create or edit a Quan Ly Su Co Y Khoa
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.maSoSuCo" for="field_maSoSuCo">Ma So Su Co</label>
+          <input type="text" class="form-control" name="maSoSuCo" id="field_maSoSuCo" data-cy="maSoSuCo" formControlName="maSoSuCo" />
+          <div *ngIf="editForm.get('maSoSuCo')!.invalid && (editForm.get('maSoSuCo')!.dirty || editForm.get('maSoSuCo')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('maSoSuCo')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.ngayBaoCao" for="field_ngayBaoCao">Ngay Bao Cao</label>
+          <div class="d-flex">
+            <input
+              id="field_ngayBaoCao"
+              data-cy="ngayBaoCao"
+              type="datetime-local"
+              class="form-control"
+              name="ngayBaoCao"
+              formControlName="ngayBaoCao"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.donViBaoCao" for="field_donViBaoCao"
+            >Don Vi Bao Cao</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="donViBaoCao"
+            id="field_donViBaoCao"
+            data-cy="donViBaoCao"
+            formControlName="donViBaoCao"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.soThuTu" for="field_soThuTu">So Thu Tu</label>
+          <input type="text" class="form-control" name="soThuTu" id="field_soThuTu" data-cy="soThuTu" formControlName="soThuTu" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.tenSuCo" for="field_tenSuCo">Ten Su Co</label>
+          <input type="text" class="form-control" name="tenSuCo" id="field_tenSuCo" data-cy="tenSuCo" formControlName="tenSuCo" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.nhomSuCo" for="field_nhomSuCo">Nhom Su Co</label>
+          <input type="text" class="form-control" name="nhomSuCo" id="field_nhomSuCo" data-cy="nhomSuCo" formControlName="nhomSuCo" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.mucDoSuCo" for="field_mucDoSuCo">Muc Do Su Co</label>
+          <input type="text" class="form-control" name="mucDoSuCo" id="field_mucDoSuCo" data-cy="mucDoSuCo" formControlName="mucDoSuCo" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.thongTinSuCo" for="field_thongTinSuCo"
+            >Thong Tin Su Co</label
+          >
+          <select class="form-control" id="field_thongTinSuCo" data-cy="thongTinSuCo" name="thongTinSuCo" formControlName="thongTinSuCo">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                thongTinSuCoOption.id === editForm.get('thongTinSuCo')!.value?.id ? editForm.get('thongTinSuCo')!.value : thongTinSuCoOption
+              "
+              *ngFor="let thongTinSuCoOption of thongTinSuCosSharedCollection; trackBy: trackThongTinSuCoById"
+            >
+              {{ thongTinSuCoOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.thongTinNguoiBenh" for="field_thongTinNguoiBenh"
+            >Thong Tin Nguoi Benh</label
+          >
+          <select
+            class="form-control"
+            id="field_thongTinNguoiBenh"
+            data-cy="thongTinNguoiBenh"
+            name="thongTinNguoiBenh"
+            formControlName="thongTinNguoiBenh"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                thongTinNguoiBenhOption.id === editForm.get('thongTinNguoiBenh')!.value?.id
+                  ? editForm.get('thongTinNguoiBenh')!.value
+                  : thongTinNguoiBenhOption
+              "
+              *ngFor="let thongTinNguoiBenhOption of thongTinNguoiBenhsSharedCollection; trackBy: trackThongTinNguoiBenhById"
+            >
+              {{ thongTinNguoiBenhOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.quanLySuCoYKhoa" for="field_quanLySuCoYKhoa"
+            >Quan Ly Su Co Y Khoa</label
+          >
+          <select
+            class="form-control"
+            id="field_quanLySuCoYKhoa"
+            data-cy="quanLySuCoYKhoa"
+            name="quanLySuCoYKhoa"
+            formControlName="quanLySuCoYKhoa"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                nhanVienOption.id === editForm.get('quanLySuCoYKhoa')!.value?.id ? editForm.get('quanLySuCoYKhoa')!.value : nhanVienOption
+              "
+              *ngFor="let nhanVienOption of nhanViensSharedCollection; trackBy: trackNhanVienById"
+            >
+              {{ nhanVienOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

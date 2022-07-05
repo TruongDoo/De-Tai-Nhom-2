@@ -1,0 +1,149 @@
+<div>
+  <h2 id="page-heading" data-cy="QuanLySuCoYKhoaHeading">
+    <span jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.home.title">Quan Ly Su Co Y Khoas</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-quan-ly-su-co-y-khoa"
+        [routerLink]="['/quan-ly-su-co-y-khoa/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.home.createLabel"> Create a new Quan Ly Su Co Y Khoa </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="quanLySuCoYKhoas?.length === 0">
+    <span jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.home.notFound">No quanLySuCoYKhoas found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="quanLySuCoYKhoas && quanLySuCoYKhoas.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="maSoSuCo">
+            <span jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.maSoSuCo">Ma So Su Co</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="ngayBaoCao">
+            <span jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.ngayBaoCao">Ngay Bao Cao</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="donViBaoCao">
+            <span jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.donViBaoCao">Don Vi Bao Cao</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="soThuTu">
+            <span jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.soThuTu">So Thu Tu</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="tenSuCo">
+            <span jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.tenSuCo">Ten Su Co</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="nhomSuCo">
+            <span jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.nhomSuCo">Nhom Su Co</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="mucDoSuCo">
+            <span jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.mucDoSuCo">Muc Do Su Co</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="thongTinSuCo.id">
+            <span jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.thongTinSuCo">Thong Tin Su Co</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="thongTinNguoiBenh.id">
+            <span jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.thongTinNguoiBenh">Thong Tin Nguoi Benh</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="quanLySuCoYKhoa.id">
+            <span jhiTranslate="codejhipsterApp.quanLySuCoYKhoa.quanLySuCoYKhoa">Quan Ly Su Co Y Khoa</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let quanLySuCoYKhoa of quanLySuCoYKhoas; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/quan-ly-su-co-y-khoa', quanLySuCoYKhoa.id, 'view']">{{ quanLySuCoYKhoa.id }}</a>
+          </td>
+          <td>{{ quanLySuCoYKhoa.maSoSuCo }}</td>
+          <td>{{ quanLySuCoYKhoa.ngayBaoCao | formatMediumDatetime }}</td>
+          <td>{{ quanLySuCoYKhoa.donViBaoCao }}</td>
+          <td>{{ quanLySuCoYKhoa.soThuTu }}</td>
+          <td>{{ quanLySuCoYKhoa.tenSuCo }}</td>
+          <td>{{ quanLySuCoYKhoa.nhomSuCo }}</td>
+          <td>{{ quanLySuCoYKhoa.mucDoSuCo }}</td>
+          <td>
+            <div *ngIf="quanLySuCoYKhoa.thongTinSuCo">
+              <a [routerLink]="['/thong-tin-su-co', quanLySuCoYKhoa.thongTinSuCo?.id, 'view']">{{ quanLySuCoYKhoa.thongTinSuCo?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="quanLySuCoYKhoa.thongTinNguoiBenh">
+              <a [routerLink]="['/thong-tin-nguoi-benh', quanLySuCoYKhoa.thongTinNguoiBenh?.id, 'view']">{{
+                quanLySuCoYKhoa.thongTinNguoiBenh?.id
+              }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="quanLySuCoYKhoa.quanLySuCoYKhoa">
+              <a [routerLink]="['/nhan-vien', quanLySuCoYKhoa.quanLySuCoYKhoa?.id, 'view']">{{ quanLySuCoYKhoa.quanLySuCoYKhoa?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/quan-ly-su-co-y-khoa', quanLySuCoYKhoa.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/quan-ly-su-co-y-khoa', quanLySuCoYKhoa.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(quanLySuCoYKhoa)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="quanLySuCoYKhoas && quanLySuCoYKhoas.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

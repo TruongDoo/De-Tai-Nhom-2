@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20220704024604",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "thong_tin_su_co",
+  "fields": [
+    {
+      "fieldName": "viTriXayRaSuCo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ngayXayRaSuCo",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "thoiGian",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ThongTinSuCo",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "quanLySuCoYKhoa",
+      "otherEntityRelationshipName": "thongTinSuCo",
+      "relationshipName": "quanLySuCoYKhoa",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

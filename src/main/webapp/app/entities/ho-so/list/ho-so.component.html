@@ -1,0 +1,116 @@
+<div>
+  <h2 id="page-heading" data-cy="HoSoHeading">
+    <span jhiTranslate="codejhipsterApp.hoSo.home.title">Ho Sos</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="codejhipsterApp.hoSo.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-ho-so"
+        [routerLink]="['/ho-so/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="codejhipsterApp.hoSo.home.createLabel"> Create a new Ho So </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="hoSos?.length === 0">
+    <span jhiTranslate="codejhipsterApp.hoSo.home.notFound">No hoSos found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="hoSos && hoSos.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="soThuTu">
+            <span jhiTranslate="codejhipsterApp.hoSo.soThuTu">So Thu Tu</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="tenHoSo">
+            <span jhiTranslate="codejhipsterApp.hoSo.tenHoSo">Ten Ho So</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="noiLuu">
+            <span jhiTranslate="codejhipsterApp.hoSo.noiLuu">Noi Luu</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="thoiGianLuu">
+            <span jhiTranslate="codejhipsterApp.hoSo.thoiGianLuu">Thoi Gian Luu</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="quanLySuCoYKhoa.id">
+            <span jhiTranslate="codejhipsterApp.hoSo.quanLySuCoYKhoa">Quan Ly Su Co Y Khoa</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="phuLuc.id">
+            <span jhiTranslate="codejhipsterApp.hoSo.phuLuc">Phu Luc</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hoSo of hoSos; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/ho-so', hoSo.id, 'view']">{{ hoSo.id }}</a>
+          </td>
+          <td>{{ hoSo.soThuTu }}</td>
+          <td>{{ hoSo.tenHoSo }}</td>
+          <td>{{ hoSo.noiLuu }}</td>
+          <td>{{ hoSo.thoiGianLuu | formatMediumDatetime }}</td>
+          <td>
+            <div *ngIf="hoSo.quanLySuCoYKhoa">
+              <a [routerLink]="['/quan-ly-su-co-y-khoa', hoSo.quanLySuCoYKhoa?.id, 'view']">{{ hoSo.quanLySuCoYKhoa?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="hoSo.phuLuc">
+              <a [routerLink]="['/phu-luc', hoSo.phuLuc?.id, 'view']">{{ hoSo.phuLuc?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/ho-so', hoSo.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/ho-so', hoSo.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(hoSo)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="hoSos && hoSos.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

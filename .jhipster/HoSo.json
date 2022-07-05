@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20220704024607",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "ho_so",
+  "fields": [
+    {
+      "fieldName": "soThuTu",
+      "fieldType": "String",
+      "javadoc": "The firstname attribute."
+    },
+    {
+      "fieldName": "tenHoSo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "noiLuu",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "thoiGianLuu",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "The Employee entity.",
+  "jpaMetamodelFiltering": false,
+  "name": "HoSo",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "quanLySuCoYKhoa",
+      "otherEntityRelationshipName": "hoSo",
+      "relationshipName": "quanLySuCoYKhoa",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "javadoc": "Another side of the same relationship",
+      "otherEntityName": "phuLuc",
+      "otherEntityRelationshipName": "hoSo",
+      "relationshipName": "phuLuc",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

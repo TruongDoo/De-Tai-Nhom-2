@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="thongTinSuCo">
+      <h2 data-cy="thongTinSuCoDetailsHeading"><span jhiTranslate="codejhipsterApp.thongTinSuCo.detail.title">Thong Tin Su Co</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ thongTinSuCo.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.thongTinSuCo.viTriXayRaSuCo">Vi Tri Xay Ra Su Co</span></dt>
+        <dd>
+          <span>{{ thongTinSuCo.viTriXayRaSuCo }}</span>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.thongTinSuCo.ngayXayRaSuCo">Ngay Xay Ra Su Co</span></dt>
+        <dd>
+          <span>{{ thongTinSuCo.ngayXayRaSuCo | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="codejhipsterApp.thongTinSuCo.thoiGian">Thoi Gian</span></dt>
+        <dd>
+          <span>{{ thongTinSuCo.thoiGian | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/thong-tin-su-co', thongTinSuCo.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
